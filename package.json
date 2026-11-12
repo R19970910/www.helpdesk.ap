@@ -1,0 +1,30 @@
+{
+  "name": "bileto",
+  "license": "AGPL-3.0-or-later",
+  "repository": "github:Probesys/bileto",
+  "type": "module",
+  "scripts": {
+    "watch": "esbuild --bundle --loader:.woff2=file --loader:.svg=file --sourcemap --outdir=public/dev_assets --watch=forever assets/*/application.*",
+    "build": "esbuild --bundle --loader:.woff2=file --loader:.svg=file --sourcemap --outdir=public/assets --minify assets/*/application.*",
+    "build:icons": "svg-sprite --config .svg-sprite.json assets/icons/*.svg",
+    "lint-js": "eslint -c .eslint.config.js assets/javascripts/",
+    "lint-js-fix": "eslint -c .eslint.config.js --fix assets/javascripts/",
+    "lint-css": "stylelint assets/stylesheets/**/*.css",
+    "lint-css-fix": "stylelint --fix assets/stylesheets/**/*.css"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "@stylistic/stylelint-plugin": "^5.0.0",
+    "esbuild": "0.28.2",
+    "eslint": "^10.0.0",
+    "globals": "^17.4.0",
+    "stylelint": "^17.4.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^8.1.1",
+    "svg-sprite": "^2.0.1"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.1.0",
+    "@hotwired/turbo": "^8.0.4"
+  }
+}
